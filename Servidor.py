@@ -24,15 +24,15 @@ def iniciarServidor(host,puerto):
         msg_rec = c.recv(1024).decode("ascii")
         print(f"Mensaje codificado {msg_rec}")
         msg_rec = Decodi(msg_rec, EstablecerPass('352'))
-        print(f"Mensaje descotificado {msg_rec}")
+        print(f"Mensaje descodificado {msg_rec}")
         c.close()
         bandera = False
     # segunda parte, conectarse a otro servidor..
-    host = "10.0.0.3"
+    host = "25.10.252.91"
     puerto = 44440
-    iniciarCliente(host, puerto, msg_rec, '759')
+    iniciarCliente(host, puerto, msg_rec, '352')
 
 if __name__ == "__main__":
-    host = "10.0.0.3"
+    host = "25.14.79.15"
     puerto = 44440
     iniciarServidor(host,puerto)

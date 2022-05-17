@@ -1,19 +1,21 @@
-def Codi(msj, encoding):
-    clave = encoding
-    index = 0
+from re import I
+
+def Codi(msj, Contra):
+    c = Contra
+    i = 0
     j = 0
     caracter = ''
     code = ''
-    while index != len(msj):
-        caracter = msj[index]
+    while i != len(msj):
+        caracter = msj[i]
         if(ord(caracter) >= 65 and ord(caracter) <= 90):
-            caracter = chr(ord(caracter) + clave[j])
+            caracter = chr(ord(caracter) + c[j])
             if(ord(caracter) > 90):
                 caracter = chr(ord(caracter) - 90 + 64)
         elif ord(caracter) == 126:
             caracter = chr(32)
         code += caracter
-        index += 1
+        i += 1
         if j < 2:
             j += 1
         else:

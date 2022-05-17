@@ -1,4 +1,3 @@
-
 import socket
 from Codificador import Codi
 from DinamicaPass import EstablecerPass
