@@ -1,19 +1,20 @@
-def Decodi(msj, contra):
-    c = contra
-    i = 0
+
+def Decodi(msj, encoding):
+    clave = encoding
+    index = 0
     j = 0
-    Contador = ''
+    caracter = ''
     code = ''
-    while i != len(msj):
-        Contador = msj[i]
-        if(ord(Contador) >= 65 and ord(Contador) <= 90):
-            Contador = chr(ord(Contador) + c[j])
-            if(ord(Contador) < 65):
-                Contador = chr(ord(Contador) - 64 + 90)
-        elif ord(Contador) == 126:
-            Contador = chr(32)
-        code += Contador
-        i += 1
+    while index != len(msj):
+        caracter = msj[index]
+        if(ord(caracter) >= 65 and ord(caracter) <= 90):
+            caracter = chr(ord(caracter) - clave[j])
+            if(ord(caracter) < 65):
+                caracter = chr((ord(caracter) - 64) + 90)
+        elif ord(caracter) == 126:
+            caracter = chr(32)
+        code += caracter
+        index += 1
         if j < 2:
             j += 1
         else:
